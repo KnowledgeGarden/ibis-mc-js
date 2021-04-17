@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/nodeed',  function(req, res, next) {
+router.get('/',  function(req, res, next) {
   var data = {};
   data.title = 'IBISLiftJS';
   
-  return res.render('node_editor', data);
+  return res.render('node_form', data);
 
 });
 
