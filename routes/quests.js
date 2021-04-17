@@ -8,12 +8,10 @@ router.get('/', async function(req, res, next) {
   var data = {};
   data.title = 'IBISLiftJS';
   console.info('quest route');
-  const questList = []; //await QuestModel.list(100, 0);
+  const questList = await QuestModel.list(100, 0);
   data.quests = questList;
-  console.info('quests', data.quests);//
+  console.info('quests', data.quests);
   return res.render('quests', data);
-  //});
-
 });
 
 module.exports = router;
