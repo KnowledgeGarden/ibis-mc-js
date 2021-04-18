@@ -4,14 +4,15 @@
         var editor = new MediumEditor('.richarea');
     });*/
 </script>
+<h1>{{title}}</h1>
 
 <div style="margin-top: 60px;">
   <h3>Node Editor</h3>
   <form id="jeForm" method="POST" action="/postjournaledit">
       <input type="hidden" name="id" value="{{id}}">
       <input type="hidden" name="istriple" value="{{isTriple}}">
-      <input type="text" placeholder="Subject" width="100">{{subject}}</input><br/>
-      <textarea class="text" placeholder="Begin typing" name="body" rows="6" cols="94">{{{body}}}</textarea><br/>
+      <input type="text" placeholder="Subject" size="200" value={{subject}}><br/>
+      <textarea class="text" placeholder="Begin typing" name="body" rows="6" cols="200">{{{body}}}</textarea><br/>
       <!--<input id="urlfield" name="url" placeholder="url" type="text" value="{{url}}" style='width:20em'><br/>-->
 
       <button type="submit" class="btn btn-secondary" form="jeForm">Submit</button>
