@@ -46,12 +46,14 @@ const Indx = require('./routes/index');
 const Quests = require('./routes/quests');
 const Usersx = require('./routes/users');
 const NodeEd = require('./routes/node_editor');
-console.info('QR', NodeEd);
+const Qst = require('./routes/quest');
+
+//console.info('QR', NodeEd);
 
 app.use('/quests', Quests);
 app.use('/users', Usersx);
 app.use('/nodeed', NodeEd);
-
+app.use('/quest', Qst);
 // Index has to be last
 app.use('/', Indx);
 

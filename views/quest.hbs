@@ -1,0 +1,110 @@
+<h1>{{title}}</h1>
+<script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function() {
+        /*    $(".opt").live('click', function() {
+                var val = $(this).attr('id');
+                $('.' + val).click();
+                $('#resp_step1').hide();
+                $('#resp_step2').show();
+            });
+        */
+
+            $("ul#myTree").columnNavigation({
+                containerPosition:"relative",
+                containerWidth:"900px",
+                containerHeight:"210px",
+                containerBackgroundColor:"rgb(255,255,255)",
+                containerFontColor:"rgb(50,50,50)",
+                columnWidth:300,
+                columnFontFamily:"'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif",
+                columnFontSize:"90%",
+                columnSeperatorStyle:"1px solid rgb(220,220,220)",
+                columnDeselectFontWeight:"normal",
+                columnDeselectColor:"rgb(50,50,50)",
+                columnSelectFontWeight:"normal",
+                columnSelectColor:"rgb(255,255,255)",
+                columnSelectBackgroundColor:"rgb(27,115,213)",
+                columnSelectBackgroundPosition:"top",
+                columnItemPadding:"3px 3px 5px 3px",
+                columnScrollVelocity:50,
+                callBackFunction    :  function(f) {
+                    loadnodes( f.attr("href") );
+                }
+
+            });
+
+            $('.time-formatted').each(function (i) {toLocalDate($(this)); $(this).removeClass('time-formatted');});
+
+            $( "#tabs" ).tabs();
+
+
+        
+
+
+        });
+
+
+        var months = new Array(12);
+        months[0] = "Jan";
+        months[1] = "Feb";
+        months[2] = "Mar";
+        months[3] = "Apr";
+        months[4] = "May";
+        months[5] = "Jun";
+        months[6] = "Jul";
+        months[7] = "Aug";
+        months[8] = "Sep";
+        months[9] = "Oct";
+        months[10] = "Nov";
+        months[11] = "Dec";
+
+        function toLocalDate($date){
+            var date = new Date(parseFloat($date.html()));
+            var dateStr = months[date.getMonth()] + ' ' + date.getDate() + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + date.getMinutes();
+            $date.html(dateStr);
+        }
+
+         //]]>
+    </script>
+
+    <table width="900px">
+        <tr>
+            <td>
+                <h2>Conversation: {{title}}</h2>
+                Creator: {{author}} &nbsp; Date: {{datetime}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul id="myTree">
+                    {{root}}
+                </ul>
+            </td>
+        </tr>
+        
+        <tr><td><h2>Selected Node</h2></td></tr>
+        <tr>
+            <td  width="900px">
+                <div id="imglabel"></div>
+                <div id="authorname"></div>
+                <div id="datetime"></div>
+                <div id="permalink"></div>
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Details</a></li>
+                        <li><a href="#tabs-2">Edit</a></li>
+                        <li><a href="#tabs-3">Respond</a></li>
+                        <li><a href="#tabs-4">Tags</a></li>
+                    </ul>
+                    <div id="tabs-1"></div>
+                    <div id="tabs-2">
+                    <div id="tab2" ></div>
+                    <div id="tabs-3">
+                        <div id="tab3" ></div>
+                    </div>
+                    <div id="tabs-4">Not implemented yet</div>
+                </div>
+            </td>
+        </tr>
+    </table>
