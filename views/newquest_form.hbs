@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+
+<div style="margin-top: 60px;">
+  <h3>Quest Editor</h3>
+  <form id="nq" method="POST" action="/newquest">
+      <input type="hidden" name="id" value="{{id}}">
+      <input type="hidden" name="istriple" value="{{isTriple}}">
+      <input type="text" placeholder="Node Name" size="200" value={{name}}><br/>
+      <textarea class="text" placeholder="Quest Question" name="question" rows="6" cols="200">{{{question}}}</textarea><br/>
+      <textarea class="text" placeholder="Quest Description" name="description" rows="6" cols="200">{{{question}}}</textarea><br/>
+
+      <button type="submit" class="btn btn-secondary" form="jeForm">Submit</button>
+  </form>
+</div>
