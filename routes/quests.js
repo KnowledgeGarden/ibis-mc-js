@@ -16,8 +16,8 @@ router.get('/', async function(req, res, next) {
 
 router.get('/createquest', function(req, res, next) {
   const data = {};
-  data.title = 'IBISLiftJS';
-  return res.redirect('/quests');
+  data.title = 'New Quest';
+  return res.redirect('/newquest');
 
 });
 

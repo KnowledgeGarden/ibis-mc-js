@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/',  function(req, res, next) {
   var data = {};
-  data.title = 'IBISLiftJS';
+  data.title = 'Node Editor';
   
   return res.render('node_form', data);
 
