@@ -22,7 +22,8 @@ router.get('/createquest', function(req, res, next) {
 });
 
 router.post('newquest', async function(req, res, next) {
-  var jsonData = {};
+  var jsonData = req.body;
+  console.info('NewQuest', jsonData);
   //TODO deal with the quest data
 
   const error = await QuestModel.new_quest(jsonData);
